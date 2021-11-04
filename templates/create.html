@@ -9,21 +9,20 @@
 </head>
 <body>
     <div class="container-sm mt-5" style="width: 65%;">
-        <form action="/create" method="post">
-            <div class="mb-3">
-                <label class="form-label">First Name:</label>
+        <form action="/user/create" method="post">
+            <div class="mb-3 form-group">
+                <label for="first_name" class="form-label">First Name:</label>
                 <input type="text" class="form-control"  name="first_name">
             </div>
-            <div class="mb-3">
-                <label class="form-label">Last Name:</label>
+            <div class="mb-3 form-group">
+                <label for="last_name" class="form-label">Last Name:</label>
                 <input type="text" class="form-control" name="last_name">
             </div>
-            <div class="mb-3">
-                <label class="form-label">Email address:</label>
+            <div class="mb-3 form-group">
+                <label for="email" class="form-label">Email address:</label>
                 <input type="text" class="form-control" name="email">
             </div>
             <button type="submit" class="btn btn-primary">Create User</button>
-            </a>
         </form>
     </div>
 </body>
