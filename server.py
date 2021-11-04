@@ -28,6 +28,11 @@ def create():
     # query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s)"
     # return connectToMySQL(DATABASE).query_db(query, data)
 
+@app.route('/user/edit', methods=['POST'])
+def user_edit():
+    Users.update(request.form)
+    return redirect('/users')
+
             
 if __name__ == "__main__":
     app.run(debug=True)
