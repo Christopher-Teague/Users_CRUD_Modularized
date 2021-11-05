@@ -52,6 +52,10 @@ def get_one(id):
     }
     return render_template('user_info.html', **context)
 
+@app.route('/user/<int:id>/delete')
+def delete_user(id):
+    Users.delete_one({ 'id' : id })
+    return redirect('/')
 
 
             

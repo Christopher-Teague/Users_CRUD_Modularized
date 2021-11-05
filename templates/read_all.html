@@ -8,7 +8,8 @@
     <title>Read All</title>
 </head>
 <body>
-    <div class="container-sm" style="width: 75%;">
+    <div class="container-sm mt-5" style="width: 75%;">
+        <h1>Users</h1>
         <table class="table border border-dark mt-5">
             <thead>
                 <tr>
@@ -29,7 +30,7 @@
                     <td class="border-start">
                         <a href="/user/{{user.id}}">show</a>
                         <a href="/user/{{user.id}}/edit">edit</a>
-                        <a href="/user/delete">delete</a>
+                        <a href="/user/{{user.id}}/delete">delete</a>
                     </td>                    
                 </tr>
                 {% endfor %}
