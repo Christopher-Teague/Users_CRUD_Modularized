@@ -9,18 +9,20 @@
 </head>
 <body>
     <div class="container-sm mt-5" style="width: 65%;">
-        <form action="/user/edit" method="post">
+        <h1>Edit User {{user.id}}</h1>
+        <a href="/users">Home</a>
+        <form action="/user/{{user.id}}/update" method="post">
             <div class="mb-3 form-group">
                 <label for="first_name" class="form-label">First Name:</label>
-                <input type="text" class="form-control"  name="first_name">
+                <input type="text" class="form-control"  name="first_name" value="{{user.first_name}}">
             </div>
             <div class="mb-3 form-group">
                 <label for="last_name" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" name="last_name">
+                <input type="text" class="form-control" name="last_name" value="{{user.last_name}}">
             </div>
             <div class="mb-3 form-group">
                 <label for="email" class="form-label">Email address:</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="email" value="{{user.email}}">
             </div>
             <button type="submit" class="btn btn-primary">Update User</button>
         </form>

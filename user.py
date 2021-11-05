@@ -23,6 +23,20 @@ class Users:
         return users
 
     @classmethod
+    def get_one(cls, data:dict):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        # make sure to call the connectToMySQL function with the schema you are targeting.
+        results = connectToMySQL('users_schema').query_db(query, data)
+        if not results:
+            return False
+        # Create an empty list to append our instances of users
+        # users = []
+        # Iterate over the db results and create instances of users with cls.
+        # for user in results:
+        #     users.append( cls(user) )
+        return cls(results[0])
+
+    @classmethod
     def save(cls, data):
         query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s);"      
         result = connectToMySQL('users_schema').query_db(query,data)
